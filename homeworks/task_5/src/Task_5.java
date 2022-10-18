@@ -124,9 +124,11 @@ public class Task_5 implements Task_5_base {
                     map.put(j, 1.0);
                 count++;
             }
-
-            for(String j : words)
-                map.put(j, (map.get(j)*100)/count);
+        }
+        
+        for(HashMap.Entry <String, Double> entry : map.entrySet()){
+            double pr = (entry.getValue()*100)/count;
+            entry.setValue(pr);
         }
 
         return map;
