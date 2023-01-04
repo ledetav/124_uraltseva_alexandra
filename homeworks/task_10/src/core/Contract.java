@@ -13,10 +13,10 @@ public class Contract {
     }
 
     public String getNumber() {
-        return null;
+        return number;
     }
 
     public String getDate() {
-        return null;
+        return date;
     }
 }
