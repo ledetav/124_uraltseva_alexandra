@@ -17,6 +17,7 @@ public class Contract {
         }
         this.number = number;
         this.date = date;
+        this.paymentDocuments = new ArrayList<>();
     }
 
     public String getNumber() {
@@ -28,9 +29,10 @@ public class Contract {
     }
 
     public void addPaymentDocument(PaymentDocument paymentDocument) {
+        paymentDocuments.add(paymentDocument);
     }
 
-    public ArrayList<PaymentDocument> getPaymentDocuments() {
-        return null;
+    public List<PaymentDocument> getPaymentDocuments() {
+        return paymentDocuments;
     }
 }

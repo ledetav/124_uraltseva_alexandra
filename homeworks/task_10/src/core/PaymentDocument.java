@@ -1,8 +1,17 @@
 package core;
 
 public class PaymentDocument {
+    private String number;
+    private int amount;
+    private PaymentType type;
+    private String contractNumber;
+    private String date;
 
-    public PaymentDocument(String string, int i, PaymentType bankOrder, String string2, String string3) {
+    public PaymentDocument(String number, int amount, PaymentType type, String contractNumber, String date) {
+        this.number = number;
+        this.amount = amount;
+        this.type = type;
+        this.contractNumber = contractNumber;
+        this.date = date;
     }
-
 }
