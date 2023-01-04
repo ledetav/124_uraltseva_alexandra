@@ -37,6 +37,6 @@ public class Contract {
     }
 
     public void removePaymentDocument(PaymentDocument paymentDocument) {
-        paymentDocuments.remove(null);
+        paymentDocuments.remove(paymentDocument);
     }
 }
