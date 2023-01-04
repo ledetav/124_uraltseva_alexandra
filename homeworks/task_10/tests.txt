@@ -1,0 +1,45 @@
+Contract:
+Test for adding a new contract with a unique number.
+Test for adding a new contract with an invalid number (null, empty string).
+Test for adding a new contract with an invalid date (null, invalid format).
+Test for adding a new payment document to the contract.
+Test for deleting a payment document from a contract.
+Test for receiving the amount of all payments under the contract.
+Test to get a list of all payments under the contract.
+Test to search for payments by number and date.
+Test to compare two contracts with different numbers.
+Test to compare two contracts with different dates.
+Test to compare two contracts with different numbers and dates.
+Test to compare two contracts with the same numbers and dates.
+
+— PaymentDocument:
+    — Test for adding a new payment document with a unique number and date.
+    — Test for obtaining the number, amount and date of the payment document.
+    — Test for changing the amount and date of the payment document.
+    — Test to compare two payment documents with different numbers.
+    — Test to compare two payment documents with different dates.
+    — Test for comparing two payment documents with different amounts.
+    — Test for comparing two payment documents with different types.
+    — Test for an attempt to create a payment document with a negative amount.
+    — Test for an attempt to create a zero-sum payment document.
+    — Test for an attempt to create a payment document with an invalid date.
+
+— PaymentManager:
+    — Test for adding a new contract with a unique number.
+    — Test for adding a new payment document with a unique number.
+    — Test to get a list of all contracts with their total amounts of payments.
+    — Test to get a list of all payments.
+    — Test to search for all payments under the contract with the specified number.
+    — Test for calculating the amount of all payments under the contract with the specified number.
+    — Test for deleting payments with a specified number, contract number and date.
+    — Test for trying to add a contract with an existing number.
+    — Test for trying to add a contract with an empty number.
+    — Test for an attempt to delete a non-existent payment document.
+    — Test for an attempt to delete a payment document by a non-existent contract number.
+    — Test for an attempt to search for payments by a non-existent contract number.
+    — Test for trying to calculate the amount of payments for a non-existent contract number.
+
+— PaymentType:
+    — Test for converting a string with the name of the payment type into an instance of the PaymentType class.
+    — Test for converting an instance of the PaymentType class into a string with the name of the payment type.
+    — Test for an attempt to convert an incorrect string into an instance of the PaymentType class.

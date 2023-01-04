@@ -1,0 +1,11 @@
+— Contract: Represents a contract, with a number, signing date, and a list of payments.
+
+— Payment: Represents a payment, with an amount, number, type, contract number, and payment date.
+
+— PaymentType: An enumeration representing the different types of payment documents that can be registered in the system (e.g. "Payment Order", "Bank Order").
+
+— PaymentTracker: Provides methods for adding, modifying, and querying contracts and payments. It might also include methods for generating reports and calculating totals and balances.
+
+— PaymentStore: Stores and retrieves contracts and payments from a persistent storage medium such as a database.
+
+— ReportGenerator: Generates reports on payment history.
