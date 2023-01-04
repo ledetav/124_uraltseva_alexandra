@@ -40,7 +40,7 @@ public class ContractTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void add_addNewContractWithInvalidDate() {
+    public void add_addNewContractWithInvalidDate_invalidFormet() {
         new Contract("123456", "20210");
     }
 }
