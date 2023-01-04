@@ -7,6 +7,7 @@ import org.junit.Test;
 import core.Contract;
 
 public class ContractTest {
+    //
     @Test
     public void add_addNewContractWithUniqueNumber() {
         String number = "123456";
@@ -21,5 +22,10 @@ public class ContractTest {
         assertNotNull(contract2);
         assertEquals(number2, contract2.getNumber());
         assertEquals(date, contract2.getDate());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void add_addNewContractWithInvalidNumber_emptyString() {
+        new Contract("", "20210315");
     }
 }
