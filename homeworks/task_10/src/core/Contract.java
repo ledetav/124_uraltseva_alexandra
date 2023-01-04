@@ -39,4 +39,8 @@ public class Contract {
     public void removePaymentDocument(PaymentDocument paymentDocument) {
         paymentDocuments.remove(paymentDocument);
     }
+
+    public Object getTotalPaymentsAmount() {
+        return null;
+    }
 }

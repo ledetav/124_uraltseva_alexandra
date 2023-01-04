@@ -70,4 +70,16 @@ public class ContractTest {
         assertEquals(2, contract.getPaymentDocuments().size());
         assertFalse(contract.getPaymentDocuments().contains(paymentDocument2));
     }
+
+    @Test
+    public void get_getTotalPaymentsAmount() {
+        Contract contract = new Contract("124", "20220101");
+        PaymentDocument payment1 = new PaymentDocument("1", 100, PaymentType.BANK_ORDER, "124", "20220101");
+        PaymentDocument payment2 = new PaymentDocument("2", 200, PaymentType.BANK_ORDER, "124", "20220101");
+        PaymentDocument payment3 = new PaymentDocument("3", 300, PaymentType.PAYMENT_ORDER, "124", "20220101");
+        contract.addPaymentDocument(payment1);
+        contract.addPaymentDocument(payment2);
+        contract.addPaymentDocument(payment3);
+        assertEquals(600, contract.getTotalPaymentsAmount());
+    }
 }
