@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import core.Contract;
+import core.PaymentDocument;
+import core.PaymentType;
 
 public class ContractTest {
     //
@@ -42,5 +44,14 @@ public class ContractTest {
     @Test(expected = IllegalArgumentException.class)
     public void add_addNewContractWithInvalidDate_invalidFormet() {
         new Contract("123456", "20210");
+    }
+
+    @Test
+    public void add_addPaymentDocumentToContract() {
+        Contract contract = new Contract("123456", "20221231");
+        PaymentDocument paymentDocument = new PaymentDocument("123", 500, PaymentType.BANK_ORDER, "123456", "20220101");
+        contract.addPaymentDocument(paymentDocument);
+        assertEquals(1, contract.getPaymentDocuments().size());
+        assertTrue(contract.getPaymentDocuments().contains(paymentDocument));
     }
 }

@@ -1,8 +1,12 @@
 package core;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Contract {
     private String number;
     private String date;
+    private List<PaymentDocument> paymentDocuments;
 
     public Contract(String number, String date) {
         if (number == null || number.isEmpty()) {
@@ -21,5 +25,12 @@ public class Contract {
 
     public String getDate() {
         return date;
+    }
+
+    public void addPaymentDocument(PaymentDocument paymentDocument) {
+    }
+
+    public ArrayList<PaymentDocument> getPaymentDocuments() {
+        return null;
     }
 }
