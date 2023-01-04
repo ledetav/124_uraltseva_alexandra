@@ -38,4 +38,9 @@ public class ContractTest {
     public void add_addNewContractWithInvalidDate_nullArgument() {
         new Contract("123456", null);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void add_addNewContractWithInvalidDate() {
+        new Contract("123456", "20210");
+    }
 }
