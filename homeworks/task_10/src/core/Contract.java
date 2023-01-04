@@ -40,7 +40,11 @@ public class Contract {
         paymentDocuments.remove(paymentDocument);
     }
 
-    public Object getTotalPaymentsAmount() {
-        return null;
+    public long getTotalPaymentsAmount() {
+        long totalAmount = 0;
+        for (PaymentDocument paymentDocument : paymentDocuments) {
+            totalAmount += paymentDocument.getAmount();
+        }
+        return totalAmount;
     }
 }
