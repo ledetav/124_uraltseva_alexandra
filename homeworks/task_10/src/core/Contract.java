@@ -35,4 +35,8 @@ public class Contract {
     public List<PaymentDocument> getPaymentDocuments() {
         return paymentDocuments;
     }
+
+    public void removePaymentDocument(PaymentDocument paymentDocument) {
+        paymentDocuments.remove(null);
+    }
 }

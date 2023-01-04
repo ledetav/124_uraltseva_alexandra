@@ -54,4 +54,20 @@ public class ContractTest {
         assertEquals(1, contract.getPaymentDocuments().size());
         assertTrue(contract.getPaymentDocuments().contains(paymentDocument));
     }
+
+    @Test
+    public void delete_removePaymentDocument() {
+        Contract contract = new Contract("123", "20221231");
+        PaymentDocument paymentDocument1 = new PaymentDocument("1", 100, PaymentType.PAYMENT_ORDER, "123", "20220101");
+        PaymentDocument paymentDocument2 = new PaymentDocument("2", 200, PaymentType.BANK_ORDER, "123", "20220101");
+        PaymentDocument paymentDocument3 = new PaymentDocument("3", 300, PaymentType.PAYMENT_ORDER, "123", "20220101");
+        contract.addPaymentDocument(paymentDocument1);
+        contract.addPaymentDocument(paymentDocument2);
+        contract.addPaymentDocument(paymentDocument3);
+
+        contract.removePaymentDocument(paymentDocument2);
+
+        assertEquals(2, contract.getPaymentDocuments().size());
+        assertFalse(contract.getPaymentDocuments().contains(paymentDocument2));
+    }
 }
