@@ -51,7 +51,7 @@ public class Contract {
 
     public List<PaymentDocument> findPaymentsByNumberAndDate(String number, String date) {
         return paymentDocuments.stream()
-            .filter(payment -> number.equals(payment.getNumber()) && date.equals(payment.getDate()))
-            .collect(Collectors.toList());
+                .filter(payment -> number.equals(payment.getNumber()) && date.equals(payment.getDate()))
+                .collect(Collectors.toList());
     }
 }
