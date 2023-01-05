@@ -2,6 +2,8 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 
 import core.Contract;
@@ -81,5 +83,24 @@ public class ContractTest {
         contract.addPaymentDocument(payment2);
         contract.addPaymentDocument(payment3);
         assertEquals(600, contract.getTotalPaymentsAmount());
+    }
+
+    @Test
+    public void get_getPaymentListForContract() {
+        Contract contract = new Contract("125", "20220101");
+        PaymentDocument payment1 = new PaymentDocument("1", 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
+        PaymentDocument payment2 = new PaymentDocument("2", 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
+        PaymentDocument payment3 = new PaymentDocument("3", 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
+
+        contract.addPaymentDocument(payment1);
+        contract.addPaymentDocument(payment2);
+        contract.addPaymentDocument(payment3);
+
+        List<PaymentDocument> paymentList = contract.getPaymentDocuments();
+
+        assertEquals(3, paymentList.size());
+        assertTrue(paymentList.contains(payment1));
+        assertTrue(paymentList.contains(payment2));
+        assertTrue(paymentList.contains(payment3));
     }
 }
