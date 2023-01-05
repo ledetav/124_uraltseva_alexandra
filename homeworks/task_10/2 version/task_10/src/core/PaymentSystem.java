@@ -44,6 +44,6 @@ public class PaymentSystem {
             }
         }
 
-        return null;
+        return payments;
     }
 }

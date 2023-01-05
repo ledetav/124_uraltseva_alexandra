@@ -32,6 +32,6 @@ public class Contract {
     }
 
     public Collection<PaymentDocument> getPaymentDocuments() {
-        return null;
+        return paymentDocuments.values();
     }
 }
