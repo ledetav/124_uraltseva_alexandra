@@ -25,13 +25,11 @@ public class PaymentSystem {
         contract.addPaymentDocument(paymentDocument);
     }
     
-    public PaymentDocument getPaymentDocument(int number) {
-        for (Contract contract : contracts.values()) {
-            PaymentDocument paymentDocument = contract.getPaymentDocument(number);
-            if (paymentDocument != null) {
-                return paymentDocument;
-            }
-        }
+    public PaymentDocument getPaymentDocument(String coontractNumber, int number) {
+        Contract contract = contracts.get(coontractNumber);
+        PaymentDocument paymentDocument = contract.getPaymentDocument(number);
+        if(paymentDocument != null)
+            return paymentDocument;
         return null;
     }
 }

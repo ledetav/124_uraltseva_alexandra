@@ -43,11 +43,11 @@ public class PaymentSystemTest {
         paymentSystem.addPaymentDocument(amount, number, type, contractNumber, paymentDate);
 
         // Проверяем, что платежный документ успешно добавлен в систему
-        assertNotNull(paymentSystem.getPaymentDocument(number));
-        assertEquals(amount, paymentSystem.getPaymentDocument(number).getAmount());
-        assertEquals(number, paymentSystem.getPaymentDocument(number).getNumber());
-        assertEquals(type, paymentSystem.getPaymentDocument(number).getType());
-        assertEquals(contractNumber, paymentSystem.getPaymentDocument(number).getContractNumber());
-        assertEquals(paymentDate, paymentSystem.getPaymentDocument(number).getPaymentDate());
+        assertNotNull(paymentSystem.getPaymentDocument(contractNumber, number));
+        assertEquals(amount, paymentSystem.getPaymentDocument(contractNumber, number).getAmount());
+        assertEquals(number, paymentSystem.getPaymentDocument(contractNumber, number).getNumber());
+        assertEquals(type, paymentSystem.getPaymentDocument(contractNumber, number).getType());
+        assertEquals(contractNumber, paymentSystem.getPaymentDocument(contractNumber, number).getContractNumber());
+        assertEquals(paymentDate, paymentSystem.getPaymentDocument(contractNumber, number).getPaymentDate());
     }
 }

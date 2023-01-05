@@ -1,29 +1,37 @@
 package core;
 
 public class PaymentDocument {
-
-    public PaymentDocument(int amount, int number, PaymentDocumentType type, String contractNumber,
-            String paymentDate) {
-    }
-
-    public Object getAmount() {
-        return null;
-    }
-
-    public Object getType() {
-        return null;
-    }
-
-    public Object getNumber() {
-        return null;
-    }
-
-    public Object getContractNumber() {
-        return null;
-    }
-
-    public Object getPaymentDate() {
-        return null;
+    private int amount;
+    private int number;
+    private PaymentDocumentType type;
+    private String contractNumber;
+    private String paymentDate;
+    
+    public PaymentDocument(int amount, int number, PaymentDocumentType type, String contractNumber, String paymentDate) {
+        this.amount = amount;
+        this.number = number;
+        this.type = type;
+        this.contractNumber = contractNumber;
+        this.paymentDate = paymentDate;
     }
     
+    public int getAmount() {
+        return amount;
+    }
+    
+    public int getNumber() {
+        return number;
+    }
+    
+    public PaymentDocumentType getType() {
+        return type;
+    }
+    
+    public String getContractNumber() {
+        return contractNumber;
+    }
+
+    public String getPaymentDate() {
+        return paymentDate;
+    }
 }
