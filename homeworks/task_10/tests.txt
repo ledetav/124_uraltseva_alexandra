@@ -1,12 +1,12 @@
 — Contract:
     — Test for adding a new contract with a unique number. + 
-    — Test for adding a new contract with an invalid number (null, empty string).
-    — Test for adding a new contract with an invalid date (null, invalid format).
-    — Test for adding a new payment document to the contract.
-    — Test for deleting a payment document from a contract.
-    — Test for receiving the amount of all payments under the contract.
-    — Test to get a list of all payments under the contract.
-    — Test to search for payments by number and date.
+    — Test for adding a new contract with an invalid number (null, empty string). +
+    — Test for adding a new contract with an invalid date (null, invalid format). +
+    — Test for adding a new payment document to the contract. + 
+    — Test for deleting a payment document from a contract. + 
+    — Test for receiving the amount of all payments under the contract. +
+    — Test to get a list of all payments under the contract. + 
+    — Test to search for payments by number and date. +
     — Test to compare two contracts with different numbers.
     — Test to compare two contracts with different dates.
     — Test to compare two contracts with different numbers and dates.
