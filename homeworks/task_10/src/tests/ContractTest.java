@@ -52,7 +52,7 @@ public class ContractTest {
     @Test
     public void add_addPaymentDocumentToContract() {
         Contract contract = new Contract("123456", "20221231");
-        PaymentDocument paymentDocument = new PaymentDocument("123", 500, PaymentType.BANK_ORDER, "123456", "20220101");
+        PaymentDocument paymentDocument = new PaymentDocument(123, 500, PaymentType.BANK_ORDER, "123456", "20220101");
         contract.addPaymentDocument(paymentDocument);
         assertEquals(1, contract.getPaymentDocuments().size());
         assertTrue(contract.getPaymentDocuments().contains(paymentDocument));
@@ -61,9 +61,9 @@ public class ContractTest {
     @Test
     public void delete_removePaymentDocument() {
         Contract contract = new Contract("123", "20221231");
-        PaymentDocument paymentDocument1 = new PaymentDocument("1", 100, PaymentType.PAYMENT_ORDER, "123", "20220101");
-        PaymentDocument paymentDocument2 = new PaymentDocument("2", 200, PaymentType.BANK_ORDER, "123", "20220101");
-        PaymentDocument paymentDocument3 = new PaymentDocument("3", 300, PaymentType.PAYMENT_ORDER, "123", "20220101");
+        PaymentDocument paymentDocument1 = new PaymentDocument(1, 100, PaymentType.PAYMENT_ORDER, "123", "20220101");
+        PaymentDocument paymentDocument2 = new PaymentDocument(2, 200, PaymentType.BANK_ORDER, "123", "20220101");
+        PaymentDocument paymentDocument3 = new PaymentDocument(3, 300, PaymentType.PAYMENT_ORDER, "123", "20220101");
         contract.addPaymentDocument(paymentDocument1);
         contract.addPaymentDocument(paymentDocument2);
         contract.addPaymentDocument(paymentDocument3);
@@ -77,9 +77,9 @@ public class ContractTest {
     @Test
     public void get_getTotalPaymentsAmount() {
         Contract contract = new Contract("124", "20220101");
-        PaymentDocument payment1 = new PaymentDocument("1", 100, PaymentType.BANK_ORDER, "124", "20220101");
-        PaymentDocument payment2 = new PaymentDocument("2", 200, PaymentType.BANK_ORDER, "124", "20220101");
-        PaymentDocument payment3 = new PaymentDocument("3", 300, PaymentType.PAYMENT_ORDER, "124", "20220101");
+        PaymentDocument payment1 = new PaymentDocument(1, 100, PaymentType.BANK_ORDER, "124", "20220101");
+        PaymentDocument payment2 = new PaymentDocument(2, 200, PaymentType.BANK_ORDER, "124", "20220101");
+        PaymentDocument payment3 = new PaymentDocument(3, 300, PaymentType.PAYMENT_ORDER, "124", "20220101");
         contract.addPaymentDocument(payment1);
         contract.addPaymentDocument(payment2);
         contract.addPaymentDocument(payment3);
@@ -89,9 +89,9 @@ public class ContractTest {
     @Test
     public void get_getPaymentListForContract() {
         Contract contract = new Contract("125", "20220101");
-        PaymentDocument payment1 = new PaymentDocument("1", 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
-        PaymentDocument payment2 = new PaymentDocument("2", 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
-        PaymentDocument payment3 = new PaymentDocument("3", 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
+        PaymentDocument payment1 = new PaymentDocument(1, 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
+        PaymentDocument payment2 = new PaymentDocument(2, 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
+        PaymentDocument payment3 = new PaymentDocument(3, 200, PaymentType.PAYMENT_ORDER, "125", "20220101");
 
         contract.addPaymentDocument(payment1);
         contract.addPaymentDocument(payment2);
@@ -107,10 +107,10 @@ public class ContractTest {
 
     @Test
     public void get_findPaymentsByNumberAndDate() {
-        PaymentDocument payment1 = new PaymentDocument("1", 300, PaymentType.BANK_ORDER, "123456", "20220101");
-        PaymentDocument payment2 = new PaymentDocument("2", 300, PaymentType.BANK_ORDER, "123456", "20220101");
-        PaymentDocument payment3 = new PaymentDocument("3", 300, PaymentType.BANK_ORDER, "123456", "20220101");
-        PaymentDocument payment4 = new PaymentDocument("4", 300, PaymentType.BANK_ORDER, "123456", "20220101");
+        PaymentDocument payment1 = new PaymentDocument(1, 300, PaymentType.BANK_ORDER, "123456", "20220101");
+        PaymentDocument payment2 = new PaymentDocument(2, 300, PaymentType.BANK_ORDER, "123456", "20220101");
+        PaymentDocument payment3 = new PaymentDocument(3, 300, PaymentType.BANK_ORDER, "123456", "20220101");
+        PaymentDocument payment4 = new PaymentDocument(4, 300, PaymentType.BANK_ORDER, "123456", "20220101");
         Contract contract = new Contract("123456", "20220101");
         contract.addPaymentDocument(payment1);
         contract.addPaymentDocument(payment2);
@@ -118,7 +118,7 @@ public class ContractTest {
         contract.addPaymentDocument(payment4);
 
         List<PaymentDocument> expectedPayments = Arrays.asList(payment1);
-        List<PaymentDocument> actualPayments = contract.findPaymentsByNumberAndDate("1", "20220101");
+        List<PaymentDocument> actualPayments = contract.findPaymentsByNumberAndDate(1, "20220101");
         assertEquals(expectedPayments, actualPayments);
     }
 }

@@ -49,9 +49,9 @@ public class Contract {
         return totalAmount;
     }
 
-    public List<PaymentDocument> findPaymentsByNumberAndDate(String number, String date) {
+    public List<PaymentDocument> findPaymentsByNumberAndDate(int number, String date) {
         return paymentDocuments.stream()
-                .filter(payment -> number.equals(payment.getNumber()) && date.equals(payment.getDate()))
+                .filter(payment -> Integer.toString(number).equals(Integer.toString(payment.getNumber())) && date.equals(payment.getDate()))
                 .collect(Collectors.toList());
     }
 }

@@ -1,13 +1,13 @@
 package core;
 
 public class PaymentDocument {
-    private String number;
+    private int number;
     private long amount;
     private PaymentType type;
     private String contractNumber;
     private String date;
 
-    public PaymentDocument(String number, long amount, PaymentType type, String contractNumber, String date) {
+    public PaymentDocument(int number, long amount, PaymentType type, String contractNumber, String date) {
         this.number = number;
         this.amount = amount;
         this.type = type;
@@ -23,7 +23,7 @@ public class PaymentDocument {
         return date;
     }
 
-    public String getNumber() {
+    public int getNumber() {
         return number;
     }
 }
