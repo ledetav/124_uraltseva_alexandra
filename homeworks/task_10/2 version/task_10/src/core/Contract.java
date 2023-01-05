@@ -1,5 +1,6 @@
 package core;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,7 +27,11 @@ public class Contract {
         paymentDocuments.put(Integer.toString(paymentDocument.getNumber()), paymentDocument);
     }
 
-    public PaymentDocument getPaymentDocument(int number) {
+    public PaymentDocument getPaymentDocumentByNumber(int number) {
         return paymentDocuments.get(Integer.toString(number));
+    }
+
+    public Collection<PaymentDocument> getPaymentDocuments() {
+        return null;
     }
 }

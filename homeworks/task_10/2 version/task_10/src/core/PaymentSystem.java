@@ -1,6 +1,8 @@
 package core;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PaymentSystem {
@@ -27,9 +29,21 @@ public class PaymentSystem {
     
     public PaymentDocument getPaymentDocument(String coontractNumber, int number) {
         Contract contract = contracts.get(coontractNumber);
-        PaymentDocument paymentDocument = contract.getPaymentDocument(number);
+        PaymentDocument paymentDocument = contract.getPaymentDocumentByNumber(number);
         if(paymentDocument != null)
             return paymentDocument;
+        return null;
+    }
+
+    public List<PaymentDocument> getPaymentsByContractNumber(String contractNumber) {
+        List<PaymentDocument> payments = new ArrayList<>();
+
+        for (Contract contract : contracts.values()) {
+            if (contract.getNumber().equals(contractNumber)) {
+                payments.addAll(contract.getPaymentDocuments());
+            }
+        }
+
         return null;
     }
 }
