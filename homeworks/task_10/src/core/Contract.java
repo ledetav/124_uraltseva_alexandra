@@ -47,4 +47,8 @@ public class Contract {
         }
         return totalAmount;
     }
+
+    public List<PaymentDocument> findPaymentsByNumberAndDate(String string, String string2) {
+        return null;
+    }
 }
