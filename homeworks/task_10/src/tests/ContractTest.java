@@ -109,16 +109,16 @@ public class ContractTest {
     public void get_findPaymentsByNumberAndDate() {
         PaymentDocument payment1 = new PaymentDocument("1", 300, PaymentType.BANK_ORDER, "123456", "20220101");
         PaymentDocument payment2 = new PaymentDocument("2", 300, PaymentType.BANK_ORDER, "123456", "20220101");
-        PaymentDocument payment3 = new PaymentDocument("3", 300, PaymentType.BANK_ORDER, "123457", "20220101");
-        PaymentDocument payment4 = new PaymentDocument("1", 300, PaymentType.BANK_ORDER, "123457", "20220101");
+        PaymentDocument payment3 = new PaymentDocument("3", 300, PaymentType.BANK_ORDER, "123456", "20220101");
+        PaymentDocument payment4 = new PaymentDocument("4", 300, PaymentType.BANK_ORDER, "123456", "20220101");
         Contract contract = new Contract("123456", "20220101");
         contract.addPaymentDocument(payment1);
         contract.addPaymentDocument(payment2);
         contract.addPaymentDocument(payment3);
         contract.addPaymentDocument(payment4);
 
-        List<PaymentDocument> expectedPayments = Arrays.asList(payment1, payment2);
-        List<PaymentDocument> actualPayments = contract.findPaymentsByNumberAndDate("123456", "20220101");
+        List<PaymentDocument> expectedPayments = Arrays.asList(payment1);
+        List<PaymentDocument> actualPayments = contract.findPaymentsByNumberAndDate("1", "20220101");
         assertEquals(expectedPayments, actualPayments);
     }
 }

@@ -18,4 +18,12 @@ public class PaymentDocument {
     public long getAmount() {
         return amount;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getNumber() {
+        return number;
+    }
 }

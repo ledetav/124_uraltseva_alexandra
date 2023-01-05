@@ -2,6 +2,7 @@ package core;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Contract {
     private String number;
@@ -48,7 +49,9 @@ public class Contract {
         return totalAmount;
     }
 
-    public List<PaymentDocument> findPaymentsByNumberAndDate(String string, String string2) {
-        return null;
+    public List<PaymentDocument> findPaymentsByNumberAndDate(String number, String date) {
+        return paymentDocuments.stream()
+            .filter(payment -> number.equals(payment.getNumber()) && date.equals(payment.getDate()))
+            .collect(Collectors.toList());
     }
 }
