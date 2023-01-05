@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.naming.directory.InvalidAttributesException;
+
 import org.junit.Test;
 
 import core.Contract;
