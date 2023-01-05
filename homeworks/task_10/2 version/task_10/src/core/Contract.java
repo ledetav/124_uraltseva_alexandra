@@ -16,4 +16,11 @@ public class Contract {
     public String getDate() {
         return date;
     }
+
+    public void addPaymentDocument(PaymentDocument paymentDocument) {
+    }
+
+    public PaymentDocument getPaymentDocument(int number2) {
+        return null;
+    }
 }
